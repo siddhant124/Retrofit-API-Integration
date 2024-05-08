@@ -1,4 +1,4 @@
-package com.example.retrofitapiintegration.Modal
+package com.example.retrofitapiintegration.model
 
 data class ProductsData(
     val limit: Int,
@@ -19,4 +19,12 @@ data class Product(
     val stock: Int,
     val thumbnail: String,
     val title: String
+)
+
+
+data class APIResponseData(
+    val productList: List<Product> = emptyList(),
+    val isLoading: Boolean = true,
+    val isError: Boolean = false,
+    val errorMsg: String = ""
 )
