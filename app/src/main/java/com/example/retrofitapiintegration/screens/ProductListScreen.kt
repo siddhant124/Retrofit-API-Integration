@@ -1,4 +1,4 @@
-package com.example.retrofitapiintegration.composeUi
+package com.example.retrofitapiintegration.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
