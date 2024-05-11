@@ -72,4 +72,7 @@ dependencies {
 
     // GSON : Converter for retrofit response
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //COIL lib for image loading from URL
+    implementation("io.coil-kt:coil-compose:2.6.0")
 }

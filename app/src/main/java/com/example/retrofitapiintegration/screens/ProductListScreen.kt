@@ -27,10 +27,8 @@ fun LaunchProductListScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
     ) {
         Column {
-            Text("Products:")
             if (productsDataUiStata.isLoading) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
@@ -44,7 +42,7 @@ fun LaunchProductListScreen(
                 }
             } else {
                 if (productsDataUiStata.isError) {
-                    Text(text = "Error While Loading response\n${productsDataUiStata.errorMsg}")
+                    ErrorScreen(productsDataUiStata.errorMsg)
                 } else {
                     Column(
                         modifier = Modifier
@@ -52,7 +50,15 @@ fun LaunchProductListScreen(
                             .verticalScroll(rememberScrollState()),
                     ) {
                         productsDataUiStata.productList.forEach { product ->
-                            Text(text = product.brand)
+                            ProductDescriptionCard(
+                                productThumbnailUrl = product.thumbnail,
+                                productName = product.title,
+                                productDescription = product.description,
+                                productBrand = product.brand,
+                                productPrice = product.price,
+                                productRating = product.rating,
+                                productCategory = product.category
+                            )
                         }
                     }
                 }
